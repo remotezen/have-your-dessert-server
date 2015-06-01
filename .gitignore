@@ -1,5 +1,4 @@
 .DS_Store
-config/*
 log/**/*
 tmp/**/*
 vendor/gems/*
@@ -7,6 +6,4 @@ vendor/gems/*
 .sass-cache/*
 public/uploads/**/*
 public/uploads/*
-db/*.db
 .*.sw*
-config/database.yml
