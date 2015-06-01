@@ -1,0 +1,19 @@
+<div class="copy-right" style="float:left">
+  &copy 2015 tuning-in 
+</div>
+  <strong>
+
+   &nbsp;
+  <%= link_to("about", url_for(:bases, :about)) %> |
+  <%= mail_to("hjoanne62@gmail.com","contact",
+              { subject:"Contact from tuning-in",
+                cc:"remotezen@bell.net"
+              }) %> |
+  <%= link_to "Home", url('/') %> |
+  <%= link_to "privacy", url('privacy') %>          
+</strong>
+<% if false %>
+  stylesheet bases
+<% end %>
+
+

@@ -1,0 +1,38 @@
+<% if @post  %>
+<div class = "center image-wrapper">
+  <%= image_tag(@post.image) %>
+</div>
+<p class="center title-wrapper" id="Home-Top" >
+<h3>
+<%= @post.title %>
+<br>
+<span class="nav-link">
+  <a href="#comment">
+  <i class="fi-comment icon-small">Comments</i>
+  </a>
+</span>
+</h3>
+</p>
+
+<p class="center body-wrapper">
+ <%= @post.body %>
+</p>
+<%unless @post.recipe.nil?%>
+<p><%= image_tag(@post.recipe.image) %></p>
+<p> <%= @post.recipe.title %></p>
+<p><%= simple_format(@post.recipe.ingredients)%></p>
+<%= partial 'bases/step', collection: @post.recipe.steps %>
+</p>
+<%end%>
+  <% if logged_in? %>
+    <%= partial 'shared/comment_form', object: @post %>
+    <%= partial 'shared/comment', object:@post %>
+  <% else %>
+    <%=partial 'shared/comment_not_logged_in'%>
+<%end%>
+<% else %>
+  <h1>
+    there are no posts
+  </h1>
+<%end%>
+
